@@ -16,7 +16,12 @@ class EventsService {
     async editEvent(eventId, userId, eventData) {
         const eventToBeUpdated = await this.getEventById(eventId)
         if (eventToBeUpdated.creatorId.toString() != userId) {
-            throw new Forbidden('do NOT EVEN TRY IT')
+            throw new BadRequest('do NOT EVEN TRY IT')
+        } if (!eventToBeUpdated) {
+            throw new BadRequest('this is not a valid event to update!')
+        } if (eventToBeUpdated.isCanceled) {
+
+            throw new BadRequest('this is not a valid id!')
         }
         eventToBeUpdated.name = eventData.name || eventToBeUpdated.name
         eventToBeUpdated.description = eventData.description || eventToBeUpdated.description
@@ -24,19 +29,19 @@ class EventsService {
         return eventToBeUpdated
     }
     async getEventById(eventId) {
-        const event = await dbContext.Events.findById(eventId).populate('creator', 'name picture')
+        const event = await dbContext.Events.findById(eventId).populate('creator ticketCount', 'name picture')
         if (!event) {
             throw new BadRequest('this is not a valid event id ')
         } return event
         // return event
     }
     async getEvents(query) {
-        const events = dbContext.Events.find(query).populate('creator', 'name picture')
+        const events = dbContext.Events.find(query).populate('creator ticketCount', 'name picture')
         return events
     }
     async createEvent(eventData) {
         const event = await dbContext.Events.create(eventData)
-        await event.populate('creator', 'name picture')
+        await event.populate('creator ticketCount', 'name picture')
         return event
 
     }

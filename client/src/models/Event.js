@@ -1,11 +1,12 @@
 export class Event{
     constructor(data){
-        this.id = data.id
+        this.id = data.id || data._id
         this.name = data.name
         this.description = data.description
         this.coverImg = data.coverImg
         this.location = data.location
         this.capacity = data.capacity
+        this.ticketCount = data.ticketCount
         this.startDate = new Date(data.startDate).toLocaleDateString()
         this.isCanceled = data.isCanceled || false
         this.type = data.type

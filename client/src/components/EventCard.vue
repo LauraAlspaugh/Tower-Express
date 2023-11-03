@@ -1,7 +1,7 @@
 <template>
-    <router-link :to="{name: 'Event', params: {eventId: eventProp.creator.id}}">
+    <router-link :to="{name: 'Event', params: {eventId: eventProp.id}}">
     <div class="event-card">        
-<img class="img-fluid" :src="eventProp.coverImg" :alt="eventProp.name">
+<img class="img-fluid" :src="eventProp.coverImg" alt="creator image">
 
 <div>
 <p class="fs-3 text-center">{{ eventProp.name }}</p>
