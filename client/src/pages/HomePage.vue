@@ -1,8 +1,8 @@
 <template>
-  <div class="container-fluid">
+  <div class="container body-card">
     <section class="row">
       <div class="col-12 text-center p-3">
-        <p class="fs-1">Coming Together. One Event at a Time.</p>
+        <p class=" together-title">Coming Together. One Event at a Time.</p>
       </div>
     </section>
     <section class="row my-5" id="">
@@ -87,5 +87,17 @@ filteredCategory.value = category
 </script>
 
 <style scoped lang="scss">
+.together-title{
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+}
+.body-card{
+ 
+  
+// background-size: cover;
+// background-repeat: no-repeat;
+// background-position: center;
 
+
+}
 </style>

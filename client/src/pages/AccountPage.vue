@@ -5,11 +5,11 @@
     <p>{{ account.email }}</p>
   </div>
 <div>
-  <p class="fs-2 text-center">Upcoming Events. </p>
+  <p class=" text-center text-title">Upcoming Events. </p>
 </div>
 <div class="container-fluid">
   <section class="row">
-    <div v-for="ticket in tickets" :key="ticket.id" class="col-12 col-md-6 p-3">
+    <div v-for="ticket in tickets" :key="ticket.id" class="col-12 col-md-3 p-3">
       <!-- <img class="ticket-card img-fluid justify-content-center" :src="ticket.event.coverImg" alt="event cover image">
       <p class="fs-2">{{ ticket.event.name }}</p>
       <p>{{ ticket.event.location }}</p>
@@ -79,5 +79,11 @@ img {
 max-width: 400px;
   height: 300px;
   object-fit: cover;
+ 
+}
+.text-title{
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: 50px;
+  text-shadow: 0px 0px 5px white;
 }
 </style>

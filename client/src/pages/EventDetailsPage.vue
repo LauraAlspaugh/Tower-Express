@@ -1,25 +1,29 @@
 <template>
-    <div class="container-fluid">
-        <section v-if="event" class="row">
+    <div class="container">
+        <section v-if="event" class="row event-card mt-5">
             <div class=" col-12 col-md-4  m-0 m-md-3">
                 <img class="image-card" :src="event.coverImg" :title="event.name" alt="event cover image">
             </div>
             <div class="col-12 col-md-6 m-0 m-md-3">
-                <p class="fs-2 event-description">{{ event.name }} Type: {{ event.type }}</p>
+                <p class="fs-2 event-description">{{ event.name }}</p>
+                <p> Type: {{ event.type }}</p>
                 <p class="event-description">{{ event.description }}</p>
                 <p>{{ event.location }}</p>
                 <p>Date: {{ event.startDate }}</p>
                 <p class="text-start">Tickets Left: <span>{{ event.capacity - event.ticketCount}}</span></p>
                 <div>
-                <button :disabled="event.ticketCount == event.capacity || event.isCanceled" v-if="event.isCanceled == false || event.ticketCount != event.capacity" @click="createTicket()" class="btn btn-primary text-end">Grab a Ticket</button>
+                <button :disabled="event.ticketCount == event.capacity || event.isCanceled" v-if="event.isCanceled == false || event.ticketCount != event.capacity" @click="createTicket()" class="btn btn-light text-end">Grab a Ticket</button>
                 <p class="fs-3" v-if="isAttending && event.isCanceled == false">Attending this Event!</p>
-                <button v-if="event.creatorId == account.id && event.isCanceled == false" @click="cancelEvent(event)" class="btn btn-danger text-end m-2">Cancel Event</button>
+                <button v-if="event.creatorId == account.id && event.isCanceled == false" @click="cancelEvent(event)" class="btn btn-dark text-end m-2">Cancel Event</button>
                 <p class="fs-2" v-if="event.isCanceled">Event Canceled!</p>
             </div>
             </div>
         </section>
         <section class="row">
-            <p class="fs-2">See who is Attending. </p>
+            <div class="col-12">
+                <p class=" fs-2 text-center  invite-list">See who is Attending. </p> 
+            </div>
+        
             <div v-for="ticket in tickets" :key="ticket.id" class="col-2">
 <img v-if="event.isCanceled == false" class="img-fluid rounded-circle my-1" :src="ticket.profile.picture" :title="ticket.profile.name" alt="creator picture"> 
             </div>
@@ -161,8 +165,29 @@ try {
     width: 350px;
     height: 350px; 
     object-fit: cover;
+    border-radius: 7px;
 position: center;
 }
+.invite-list{
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 0px 0px 3px black;
+    color: white;
+    
+    }
+    .event-card{
+    margin: 10px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 7px;
+  /* From https://css.glass */
+background: rgba(187, 174, 174, 0.62);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.6px);
+-webkit-backdrop-filter: blur(3.6px);
+border: 1px solid rgba(30, 23, 23, 0.78);
+}
+
 @media (max-width: 900px){
     .image-card{
         width: 200px;
@@ -170,6 +195,7 @@ position: center;
         object-fit: cover;
         margin-top: 4px;
     }
+    
     // .event-description{
     //     width: 150px;
     //     margin: 0px;

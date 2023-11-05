@@ -4,7 +4,7 @@
 <img class="img-fluid" :src="eventProp.coverImg" alt="creator image">
 
 <div>
-<p class="fs-3 text-center">{{ eventProp.name }}</p>
+<p class="fs-4 text-center">{{ eventProp.name }}</p>
 <p class="text-center">{{ eventProp.location}}</p>
 </div>
     
@@ -27,10 +27,26 @@ export default {
 
 <style lang="scss" scoped>
 img{
-    border-radius: 2px;
+    border-radius: 7px;
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+;
 }
 .event-card{
+    width: 21rem;
     border: 2px solid black;
     padding: 5px;
+    border-radius: 7px;
+  /* From https://css.glass */
+background: rgba(187, 174, 174, 0.62);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.6px);
+-webkit-backdrop-filter: blur(3.6px);
+border: 1px solid rgba(30, 23, 23, 0.78);
+}
+p{
+    color: black;
 }
 </style>

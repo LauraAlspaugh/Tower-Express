@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <nav class="navbar navbar-expand-lg navbar-color px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center fs-2">
-        <i class="mdi mdi-bag-suitcase-outline"><span>Tower</span></i>
+      <div class="d-flex flex-column align-items-center fs-1">
+        <i class="mdi mdi-leaf"><span class="gather-title">Gather</span></i>
       </div>
     </router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -49,10 +49,16 @@ a:hover {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+.gather-title{
+  font-family: 'Calligraffitti', cursive;
+}
 
 @media screen and (min-width: 768px) {
   nav {
-    height: 64px;
+    height: 79px;
   }
+}
+.navbar-color{
+  background-color: #545e43;
 }
 </style>
