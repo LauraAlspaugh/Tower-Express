@@ -5,7 +5,7 @@
                 <img class="image-card" :src="event.coverImg" :title="event.name" alt="event cover image">
             </div>
             <div class="col-12 col-md-6 m-0 m-md-3">
-                <p class="fs-2 event-description">{{ event.name }}</p>
+                <p class="fs-1 event-description event-name">{{ event.name }}</p>
                 <p> Type: {{ event.type }}</p>
                 <p class="event-description">{{ event.description }}</p>
                 <p>{{ event.location }}</p>
@@ -13,7 +13,7 @@
                 <p class="text-start">Tickets Left: <span>{{ event.capacity - event.ticketCount}}</span></p>
                 <div>
                 <button :disabled="event.ticketCount == event.capacity || event.isCanceled" v-if="event.isCanceled == false || event.ticketCount != event.capacity" @click="createTicket()" class="btn btn-light text-end">Grab a Ticket</button>
-                <p class="fs-3" v-if="isAttending && event.isCanceled == false">Attending this Event!</p>
+                <p class="fs-3 event-name" v-if="isAttending && event.isCanceled == false">Attending this Event!</p>
                 <button v-if="event.creatorId == account.id && event.isCanceled == false" @click="cancelEvent(event)" class="btn btn-dark text-end m-2">Cancel Event</button>
                 <p class="fs-2" v-if="event.isCanceled">Event Canceled!</p>
             </div>
@@ -39,7 +39,7 @@
 </div>
 
 
-<button type="submit" class="btn btn-primary">Post Comment</button>
+<button type="submit" class="btn btn-dark">Post Comment</button>
 </form>
             </div>
         </section>
@@ -186,6 +186,9 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(3.6px);
 -webkit-backdrop-filter: blur(3.6px);
 border: 1px solid rgba(30, 23, 23, 0.78);
+}
+.event-name{
+font-family: 'Pinyon Script', cursive;
 }
 
 @media (max-width: 900px){

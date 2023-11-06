@@ -5,8 +5,10 @@
   <main>
     <router-view />
   </main>
-  <footer class="bg-dark text-light">
-    @ copyright 2023 Laura Alspaugh.
+  <footer class="footer-color text-light">
+    <p class="m-5"><i class="mdi mdi-copyright"></i> 2023 by Laura Alspaugh.
+
+    </p>
   </footer>
 </template>
 
@@ -43,5 +45,6 @@ footer {
   display: grid;
   place-content: center;
   height: 32px;
+  background-color: #545e43;
 }
 </style>

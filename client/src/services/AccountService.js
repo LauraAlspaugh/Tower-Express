@@ -18,6 +18,11 @@ class AccountService {
     logger.log('getting my tickets!', res.data)
     AppState.myTickets = res.data.map((ticket)=> new Ticket(ticket))
 }
+async editAccount(accountData) {
+  const res = await api.put('/account', accountData)
+  logger.log(res.data)
+  AppState.account = new Account(res.data)
+}
 }
 
 export const accountService = new AccountService()

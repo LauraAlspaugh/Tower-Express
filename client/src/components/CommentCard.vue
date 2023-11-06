@@ -8,7 +8,7 @@
                 <div class="col-8">
                     <p>{{ commentProp.body }}</p>
                     <p>Created At: {{ commentProp.createdAt }}</p>
-                    <button @click="destroyComment()">Delete Comment</button>
+                    <button  class="btn btn-light" @click="destroyComment()">Delete Comment</button>
                 </div>
             
         </section>
@@ -55,7 +55,8 @@ export default {
 <style lang="scss" scoped>
 .border-comment{
     border: 2px solid black ;
-    padding: 5px;
-    border-radius: 3px;
+    padding: 10px;
+    border-radius: 10px;
+   
 }
 </style>

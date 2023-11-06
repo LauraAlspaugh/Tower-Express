@@ -4,7 +4,7 @@
 <img class="img-fluid" :src="eventProp.coverImg" alt="creator image">
 
 <div>
-<p class="fs-4 text-center">{{ eventProp.name }}</p>
+<p class="fs-4 text-center event-name">{{ eventProp.name }}</p>
 <p class="text-center">{{ eventProp.location}}</p>
 </div>
     
@@ -48,5 +48,8 @@ border: 1px solid rgba(30, 23, 23, 0.78);
 }
 p{
     color: black;
+}
+.event-name{
+    font-family: 'Pinyon Script', cursive;
 }
 </style>
