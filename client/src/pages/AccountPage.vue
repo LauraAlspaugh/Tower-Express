@@ -63,7 +63,7 @@
         <textarea v-model="editable.bio" type="text" class="form-control" id="bio" placeholder="Bio..."></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-dark">Submit</button>
     </form>
   </section> 
 </template>
