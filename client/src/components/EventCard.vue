@@ -3,10 +3,10 @@
         <router-link :to="{ name: 'Event', params: { eventId: eventProp.id } }">
             <img class="img-fluid" :src="eventProp.coverImg" alt="creator image">
         </router-link>
-        <span v-if="isFavEvent" @click.stop="unfavoriteEvent()" role="button"><i class="fs-2 mdi mdi-heart text-center"
+        <!-- <span v-if="isFavEvent" @click.stop="unfavoriteEvent()" role="button"><i class="fs-2 mdi mdi-heart text-center"
                 title="unfavorite this event"></i></span>
         <span v-else @click.stop="favoriteEvent()" role="button"><i class="fs-2 mdi mdi-heart-outline text-center"
-                title="favorite this recipe"></i></span>
+                title="favorite this recipe"></i></span> -->
 
         <div>
             <p class="fs-4 text-center event-name">{{ eventProp.name }}</p>
