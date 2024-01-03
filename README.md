@@ -1,0 +1,1 @@
+Tower is a web application featuring events that users can choose to attend. This project was build out individually over a three day time span. It uses Vue for the front end framework, and node.Js for the server side.
